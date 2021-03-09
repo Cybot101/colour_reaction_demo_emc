@@ -46,7 +46,12 @@ basic.forever(function () {
             pause(300)
         }
     } else {
-    	
+        for (let i = 0; i<4; i++) {
+            led_p2.showColor(neopixel.colors(NeoPixelColors.Yellow))
+            pause(300)
+            led_p2.showColor(neopixel.colors(NeoPixelColors.Black))
+            pause(300)
+        }
     }
 
     strip.showRainbow()
@@ -59,11 +64,11 @@ basic.forever(function () {
 
 input.onPinPressed(TouchPin.P1, function () {
     if (winner == 0) {
-        winner = 1;
+        winner = 2;
     }
 })
 input.onPinPressed(TouchPin.P2, function () {
     if (winner == 0) {
-        winner = 2;
+        winner = 1;
     }
 })
